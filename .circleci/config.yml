@@ -34,10 +34,10 @@ jobs:
           fingerprints:
             - "a6:07:7e:40:b4:84:e5:b6:80:49:f5:df:59:ce:d0:aa"
       - run:
-          name: Deploy master
+          name: Deploy Over SSH
           #command: pwd
-          command:  ls ~/.ssh/
-          #command: scp -r /home/circleci/project/target/HelloWorld-1.0-SNAPSHOT.jar manjunathdavanam@192.168.1.7:/Users/manjunathdavanam/test
+          #command:  ls ~/.ssh/
+          command: scp -r /home/circleci/project/target/HelloWorld-1.0-SNAPSHOT.jar manjunathdavanam@192.168.1.7:/Users/manjunathdavanam/test
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -45,4 +45,6 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test
-      - deploy-job
+      - deploy-job:
+          requires:
+            - build-and-test
