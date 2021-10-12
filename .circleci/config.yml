@@ -35,7 +35,7 @@ jobs:
             - "a6:07:7e:40:b4:84:e5:b6:80:49:f5:df:59:ce:d0:aa"
       - run:
           name: Deploy master
-          command: ls
+          command: pwd
           #command: scp -r ./* manjunathdavanam@192.168.1.7:/Users/manjunathdavanam/test
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
