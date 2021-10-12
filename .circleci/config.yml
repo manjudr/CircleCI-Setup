@@ -37,10 +37,10 @@ jobs:
           name: Deploy Over SSH
           #command: pwd
           #command:  ls ~/.ssh/
-          commands:
-            - pwd
-            - ls
-            - scp -r /home/circleci/project/target/HelloWorld-1.0-SNAPSHOT.jar manjunathdavanam@192.168.1.7:/Users/manjunathdavanam/test
+          command: |
+             pwd
+             ls
+             scp -r /home/circleci/project/target/HelloWorld-1.0-SNAPSHOT.jar manjunathdavanam@192.168.1.7:/Users/manjunathdavanam/test
     # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
