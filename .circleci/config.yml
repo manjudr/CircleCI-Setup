@@ -21,7 +21,7 @@ jobs:
           command: |
             pwd
             ls
-            scp -r /home/circleci/project/target/HelloWorld-1.0-SNAPSHOT.jar manjunathdavanam@192.168.1.2:/Users/manjunathdavanam/test
+            scp -r /home/circleci/project/target/HelloWorld-1.0-SNAPSHOT.jar ubuntu@ec2-18-117-119-56.us-east-2.compute.amazonaws.com:/home/ubuntu
 workflows:
   sample:
     jobs:
